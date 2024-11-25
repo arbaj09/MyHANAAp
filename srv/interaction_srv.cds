@@ -1,5 +1,7 @@
 using app.interactions from '../db/interactions';
 using {sap} from '@sap/cds-common-content';
+using V_INTERACTION from '../db/interactions';
+
 
 service CatalogService {
 
@@ -20,5 +22,10 @@ service CatalogService {
         where: 'country_code = ''DE'''
     }]
     entity HeaderView          as projection on interactions.Headers;
+
+    function sleep() returns Boolean;
+
+     @readonly
+    entity V_Interaction as projection on V_INTERACTION;
 
 }

@@ -1,4 +1,4 @@
-namespace app.interactions;
+//namespace app.interactions;
 
 using {
     Country,
@@ -6,6 +6,8 @@ using {
     cuid,
     managed
 } from '@sap/cds/common';
+context app.interactions {
+    
 
 type BusinessKey : String(10);
 type Price       : Decimal(10, 2);
@@ -26,3 +28,17 @@ entity Items : cuid {
     price       : Price;
     currency    : Currency;
 };
+}
+
+Entity V_INTERACTION {
+key     CREATEDAT: Timestamp  @title: 'CREATEDAT: CREATEDAT' ; 
+        CREATEDBY: String(255)  @title: 'CREATEDBY: CREATEDBY' ; 
+        MODIFIEDAT: Timestamp  @title: 'MODIFIEDAT: MODIFIEDAT' ; 
+        MODIFIEDBY: String(255)  @title: 'MODIFIEDBY: MODIFIEDBY' ; 
+        PARTNER: String(10)  @title: 'PARTNER: PARTNER' ; 
+        COUNTRY_CODE: String(3)  @title: 'COUNTRY_CODE: COUNTRY_CODE' ; 
+        TEXT: String(1024)  @title: 'TEXT: TEXT' ; 
+        DATE: String  @title: 'DATE: DATE' ; 
+        PRICE: Decimal(10)  @title: 'PRICE: PRICE' ; 
+        CURRENCY_CODE: String(3)  @title: 'CURRENCY_CODE: CURRENCY_CODE' ; 
+}
